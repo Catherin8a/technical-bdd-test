@@ -9,7 +9,7 @@ public class LoginSteps {
     @Page
     private LoginPage loginPage;
 
-    @Step
+    @Step("Hacer login con usuario {0} y clave {1}")
     public void hacerLogin(String usuario, String clave) {
         loginPage.getTxtUsername().type(usuario);
         loginPage.getTxtPassword().type(clave);
