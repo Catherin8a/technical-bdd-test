@@ -1,6 +1,6 @@
 # Proyecto de Automatización con Serenity BDD y Maven
 
-Este proyecto utiliza **Serenity BDD** para la automatización de pruebas tanto en el front-end (usando la demo de Applitools) como en servicios REST (usando la API de [Reqres](https://reqres.in/api/)). Los escenarios de pruebas están escritos en **Gherkin** para facilitar la legibilidad y comprensión.
+Este proyecto utiliza **Serenity BDD** para la automatización de pruebas tanto en el front-end (usando la demo de Applitools) como en servicios REST (usando la API de [Reqres](https://reqres.in/api/)). Los escenarios de pruebas están escritos en **Gherkin** para facilitar la legibilidad y comprensión, también se utilizó el patrón de diseño **POM**.
 
 ## Requisitos previos
 
@@ -16,6 +16,7 @@ El arquetipo del proyecto está construído de la siguiente forma:
 ```Gherkin
 src
   + main
+    + java
   + test
     + java                        Test runners and supporting code
     + resources
