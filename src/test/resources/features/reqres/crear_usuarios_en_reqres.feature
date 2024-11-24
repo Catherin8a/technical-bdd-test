@@ -10,15 +10,15 @@ Característica: Pruebas de API para creación y consulta de usuarios
       | name      | job                 |
       | Test User | Automation Engineer |
     Cuando envíe una solicitud POST al endpoint de usuarios
-    Entonces el usuario debe ser creado
-    Y el cuerpo de la respuesta debe contener un campo "id"
+    Entonces el usuario deberá ser creado
+    Y el cuerpo de la respuesta deberá contener un campo "id"
 
   Escenario: Consultar usuario creado y obtener sus detalles con éxito
     Dado que creé un usuario con los siguientes datos
       | name      | job                 |
       | Test User | Automation Engineer |
     Cuando obtenga el usuario creado mediante el id
-    Entonces la respuesta debe ser exitosa
-    Y el cuerpo de la respuesta debe contener los siguientes datos:
+    Entonces la respuesta deberá ser exitosa
+    Y el cuerpo de la respuesta deberá contener los siguientes datos:
       | first_name | Test User           |
       | job        | Automation Engineer |

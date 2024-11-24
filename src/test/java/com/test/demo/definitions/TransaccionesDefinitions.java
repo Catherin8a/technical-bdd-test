@@ -59,7 +59,7 @@ public class TransaccionesDefinitions {
         Assert.assertEquals("El crédito disponible no es el esperado", creditoDisponible, homeSteps.obtenerCreditoDisponible());
     }
 
-    @Entonces("los valores positivos deben estar en verde")
+    @Entonces("los valores positivos deberán estar en verde")
     public void verificarValoresPositivos() {
         SoftAssertions softAssertions = new SoftAssertions();
 
@@ -79,7 +79,7 @@ public class TransaccionesDefinitions {
         softAssertions.assertAll();
     }
 
-    @Entonces("los valores negativos deben estar en rojo")
+    @Entonces("los valores negativos deberán estar en rojo")
     public void verificarValoresNegativos() {
         SoftAssertions softAssertions = new SoftAssertions();
 

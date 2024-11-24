@@ -33,17 +33,17 @@ public class UsuariosApiDefinitions {
     }
 
     @Cuando("envíe una solicitud POST al endpoint de usuarios")
-    public void enviarSolicitudCreacionUsuario() {
+    public void enviarSolicitudCrearUsuario() {
         response = userApiSteps.crearUsuario(mapUserData);
     }
 
-    @Entonces("el usuario debe ser creado")
-    public void usuarioDebeSerCreado() {
+    @Entonces("el usuario deberá ser creado")
+    public void verificarUsuarioCreado() {
         response.then().log().all();
         Assert.assertEquals("El servicio no respondió 201.", HttpStatus.SC_CREATED, response.getStatusCode());
     }
 
-    @Entonces("el cuerpo de la respuesta debe contener un campo {string}")
+    @Entonces("el cuerpo de la respuesta deberá contener un campo {string}")
     public void verificarCampoId(String campo) {
         Assert.assertNotNull("El campo id no existe en la respuesta del servicio.", response.jsonPath().getString(campo));
     }
@@ -55,14 +55,14 @@ public class UsuariosApiDefinitions {
         response = userApiSteps.obtenerUsuario("3");
     }
 
-    @Entonces("la respuesta debe ser exitosa")
+    @Entonces("la respuesta deberá ser exitosa")
     public void verificarRespuestaExitosa() {
         response.then().log().all();
         Assert.assertEquals("No se encontró el usuario con id: " + id, HttpStatus.SC_OK, response.getStatusCode());
     }
 
-    @Entonces("el cuerpo de la respuesta debe contener los siguientes datos:")
-    public void entoncesElCuerpoDeLaRespuestaDebeContenerLosDatos(Map<String, String> datosEsperados) {
+    @Entonces("el cuerpo de la respuesta deberá contener los siguientes datos:")
+    public void verificarDatosRespuesta(Map<String, String> datosEsperados) {
         SoftAssertions softAssertions = new SoftAssertions();
         for (Map.Entry<String, String> registro : datosEsperados.entrySet()) {
             softAssertions.assertThat(response.jsonPath().getString("data." + registro.getKey()))

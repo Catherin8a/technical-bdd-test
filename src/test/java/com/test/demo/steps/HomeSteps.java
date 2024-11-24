@@ -22,12 +22,12 @@ public class HomeSteps {
         return homePage.getDriver().getCurrentUrl();
     }
 
-    @Step
+    @Step("Obtener la cantidad de transacciones registradas en la tabla")
     public int obtenerCantidadTransacciones() {
         return homePage.getTblTransacciones().findBy(By.tagName("tbody")).findElements(By.tagName("tr")).size();
     }
 
-    @Step
+    @Step("Obtener los valores de los montos")
     public List<Map<String, Object>> obtenerValoresMonto() {
         // Encuentra todas las filas dentro del tbody de la tabla
         List<WebElement> filas = homePage.getTblTransacciones().findBy(By.tagName("tbody")).findElements(By.tagName("tr"));
@@ -41,9 +41,9 @@ public class HomeSteps {
         List<Map<String, Object>> listaDatos = new ArrayList<>();
 
         for (WebElement fila : filas) {
-            WebElement celda = fila.findElement(By.xpath("./td[5]/span")); // Obtén la celda de la columna 5
-            String textoCelda = celda.getText().trim(); // Obtén el texto de la celda
-            String claseCelda = celda.getAttribute("class"); // Obtén las clases de la celda
+            WebElement celda = fila.findElement(By.xpath("./td[5]/span")); // Obtiene la celda de la columna 5
+            String textoCelda = celda.getText().trim(); // Obtiene el texto de la celda
+            String claseCelda = celda.getAttribute("class"); // Obtiene el atributo class de la celda
 
             // Limpia y convierte el texto de la celda
             Double valorNumerico = Utils.limpiarCeldasNumericas(textoCelda);
@@ -56,16 +56,15 @@ public class HomeSteps {
             // Agrega el mapa a la lista
             listaDatos.add(dataMap);
         }
-
         return listaDatos;
     }
 
-    @Step
+    @Step("Obtener el saldo total")
     public String obtenerSaldoTotal() {
         return homePage.getLblSaldoTotal().getText();
     }
 
-    @Step
+    @Step("Obtener el crédito disponible")
     public String obtenerCreditoDisponible() {
         return homePage.getLblCreditoDisponible().getText();
     }

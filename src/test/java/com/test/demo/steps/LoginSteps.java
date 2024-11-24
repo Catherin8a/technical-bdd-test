@@ -15,5 +15,4 @@ public class LoginSteps {
         loginPage.getTxtPassword().type(clave);
         loginPage.getBtnLogin().click();
     }
-
 }

@@ -11,7 +11,7 @@ Característica: Transacciones en Applitools
     Cuando ingrese las credenciales usuario: "testuser" y contraseña: "testpassword"
     Entonces iniciará sesión con éxito
     Y podrá ver 6 transacciones en la tabla de gastos
-    Y los valores positivos deben estar en verde
-    Pero los valores negativos deben estar en rojo
+    Y los valores positivos deberán estar en verde
+    Pero los valores negativos deberán estar en rojo
     Y el saldo total será de "$350"
     Y el crédito disponible será de "$17,800"
